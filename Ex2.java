@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Ex2 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter an integer");
+		int 0a = sc.nextInt();
+		
+		try {
+			if(a < 0)
+				throw new NegativeNumberNotAllowedException(a);
+			else {
+				for(int i =2;i<a/2;i++) {
+					if(a%i == 0) {
+						throw new NumberNotPrimeException(a);
+					}
+				}
+			}
+		}catch(NegativeNumberNotAllowedException na) {
+			System.out.println(na);
+		}
+		catch(NumberNotPrimeException np) {
+			System.out.println(np);
+		}
+	}
+}
+
+class NegativeNumberNotAllowedException extends Exception {
+	int num;
+	NegativeNumberNotAllowedException(int a) {
+		num = a;
+	}
+}
+class NumberNotPrimeException extends Exception {
+	int n;
+	NumberNotPrimeException(int b) {
+		n = b;
+	}
+}
