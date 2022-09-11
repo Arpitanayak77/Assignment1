@@ -1,3 +1,9 @@
+/*Write Java Program to perform the following Operations :
+	a) Read a line of text.
+	b) Search for a sub-string SDMCET
+	c) If found, then print success message
+	d) Otherwise throw an exception SubStringNotFoundException
+*/
 import java.io.*;
 class Ex3 {
 	public static void main(String args[]) throws IOException{
