@@ -10,14 +10,10 @@ public class Ex4 {
 			fout = new FileOutputStream("C:/Users/arpit/OneDrive/Desktop/Assinment1/Consonants.txt");
 			while((ch = fin.read())!= -1){ 
 				if(ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || 
-				ch =='o' || ch == 'O' || ch == 'u' || ch == 'U') {
+				ch =='o' || ch == 'O' || ch == 'u' || ch == 'U') 
 					throw new VowelNotAllowedException();
-					//ch++;
-				}
-				else {
+				else 
 					fout.write(ch);
-					//ch++;
-				}
 			}	
 		} catch(VowelNotAllowedException v){
 			System.out.println( v);
