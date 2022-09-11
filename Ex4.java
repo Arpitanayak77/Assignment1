@@ -1,28 +1,26 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
+
 public class Ex4 {
-	public static void main(String[] args) {
-		FileInputStream fin = null;
-		FileOutputStream fout = null;
+	public static void main(String[] args)throws IOException{
+		FileInputStream fin = new FileInputStream("C:/Users/arpit/OneDrive/Desktop/Assinment1/Alphabets.txt"); 
+		FileOutputStream fout = new FileOutputStream("C:/Users/arpit/OneDrive/Desktop/Assinment1/Consonants.txt");
 		int ch;
-		try {
-			fin = new FileInputStream("C:/Users/arpit/OneDrive/Desktop/Assinment1/Alphabets.txt");
-			fout = new FileOutputStream("C:/Users/arpit/OneDrive/Desktop/Assinment1/Consonants.txt");
-			while((ch = fin.read())!= -1){ 
+		while((ch = fin.read())!= -1){ 
+            try{
 				if(ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || 
-				ch =='o' || ch == 'O' || ch == 'u' || ch == 'U') 
+				   ch =='o' || ch == 'O' || ch == 'u' || ch == 'U') 
 					throw new VowelNotAllowedException();
 				else 
 					fout.write(ch);
-			}	
-		} catch(VowelNotAllowedException v){
-			System.out.println( v);
-		} catch(Exception e) {
-			System.out.println("File not found " + e);
+			} catch(VowelNotAllowedException v){
+				System.out.println( v);
+			
 		}
 	}
+	fin.close();
+	fout.close();
 }
-
+}
 class VowelNotAllowedException extends Exception{
 	public String toString() {
 		return "Vowel is restricted";
