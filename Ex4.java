@@ -1,3 +1,8 @@
+/*Write a Java program to perform the following operations:
+a) Create a file named Alphabets.txt and insert appropriate data into it
+b) Read the file name and copy all the consonants into another file named Consonants.txt
+c) If vowel is encountered, throw an exception VowelNotAllowedException and continue until end of file
+ */
 import java.io.*;
 
 public class Ex4 {
